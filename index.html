@@ -23,13 +23,13 @@
             </svg>
           </h1>
         </header>
-        <div class="popup w-screen h-screen fixed bg-slate-800 top-0 left-0" id="popup">
+        <div class="popup w-screen h-screen z-[99999] fixed bg-slate-800 top-0 left-0" id="popup">
           <div class="w-full h-9 flex justify-end items-center">
             <svg xmlns="http://www.w3.org/2000/svg" id="close" onclick="closePopup()" fill="#fff" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="w-10 h-10">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </div>
-          <div class="w-screen h-screen flex items-center justify-center">
+          <div class="w-screen h-screen z-[99999] flex items-center justify-center">
             <p class="text-white font-extrabold text-2xl p-4 text-center">Harap menginput terlebih dahulu dan masukkan angka!!😉</p>
           </div>
         </div>
@@ -85,7 +85,7 @@
             </li>
           </ul>
         </div>
-        <div id="myTabContent">
+        <div id="myTabContent" class="-z-50">
           <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <div class="w-full mt-3 gap-2 flex flex-col items-center font-medium justify-center">
               <h1 class="w-[95%] h-10 text-xl text-white font-fira" id="cel">
