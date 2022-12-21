@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konversi Suhu</title>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css" />
+    <link href="output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="input.css" />
+  </head>
+  <body>
+    <main>
+      <div class="bg-slate-800 w-screen h-screen">
+        <header class="w-full flex items-center justify-center logo">
+          <h1 class="logo flex items-center justify-center gap-3 text-center w-full font-fira font-semibold text-2xl p-4 bg-opacity-30 drop-shadow-2xl" id="animate-header">
+            Konversi Suhu
+            <svg class="w-8 svg" id="tempe" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 320 512">
+              <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path
+                d="M160 64c-26.5 0-48 21.5-48 48V276.5c0 17.3-7.1 31.9-15.3 42.5C86.2 332.6 80 349.5 80 368c0 44.2 35.8 80 80 80s80-35.8 80-80c0-18.5-6.2-35.4-16.7-48.9c-8.2-10.6-15.3-25.2-15.3-42.5V112c0-26.5-21.5-48-48-48zM48 112C48 50.2 98.1 0 160 0s112 50.1 112 112V276.5c0 .1 .1 .3 .2 .6c.2 .6 .8 1.6 1.7 2.8c18.9 24.4 30.1 55 30.1 88.1c0 79.5-64.5 144-144 144S16 447.5 16 368c0-33.2 11.2-63.8 30.1-88.1c.9-1.2 1.5-2.2 1.7-2.8c.1-.3 .2-.5 .2-.6V112zM208 368c0 26.5-21.5 48-48 48s-48-21.5-48-48c0-20.9 13.4-38.7 32-45.3V152c0-8.8 7.2-16 16-16s16 7.2 16 16V322.7c18.6 6.6 32 24.4 32 45.3z"
+              />
+            </svg>
+          </h1>
+        </header>
+        <div class="popup w-screen h-screen fixed bg-slate-800 top-0 left-0" id="popup">
+          <div class="w-full h-9 flex justify-end items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" id="close" onclick="closePopup()" fill="#fff" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="w-10 h-10">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <div class="w-screen h-screen flex items-center justify-center">
+            <p class="text-white font-extrabold text-2xl p-4 text-center">Harap menginput terlebih dahulu dan masukkan angka!!😉</p>
+          </div>
+        </div>
+        <div class="w-screen h-10 fixed bottom-0 left-0">
+          <p class="text-[#94a3b8] text-sm text-center">
+            hsbnpahri@gmail.com
+          </p>
+        </div>
+
+        <div class="mb-4 border-b -z-40 border-gray-200 dark:border-gray-700">
+          <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+            <li class="mr-2" role="presentation">
+              <button class="inline-block p-4 rounded-t-lg border-b-2" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Celcius</button>
+            </li>
+            <li class="mr-2" role="presentation">
+              <button
+                class="inline-block p-4 rounded-t-lg border-b-2 hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                id="dashboard-tab"
+                data-tabs-target="#dashboard"
+                type="button"
+                role="tab"
+                aria-controls="dashboard"
+                aria-selected="false"
+              >
+                Fahrenheit
+              </button>
+            </li>
+            <li class="mr-2" role="presentation">
+              <button
+                class="inline-block p-4 rounded-t-lg border-b-2 hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                id="settings-tab"
+                data-tabs-target="#settings"
+                type="button"
+                role="tab"
+                aria-controls="settings"
+                aria-selected="false"
+              >
+                Kelvin
+              </button>
+            </li>
+            <li role="presentation">
+              <button
+                class="inline-block p-4 rounded-t-lg border-b-2  hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                id="contacts-tab"
+                data-tabs-target="#contacts"
+                type="button"
+                role="tab"
+                aria-controls="contacts"
+                aria-selected="false"
+              >
+                Reamur
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div id="myTabContent">
+          <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="w-full mt-3 gap-2 flex flex-col items-center font-medium justify-center">
+              <h1 class="w-[95%] h-10 text-xl text-white font-fira" id="cel">
+                Celcius
+              </h1>
+              <div class="flex w-[95%] gap-2 items-center justify-center">
+                <input type="text" class="input bg-gray-700 text-[#94a3b8] outline-none border-none font-fira" id="input1" placeholder="Tulis Disini..." />
+                <svg id="btn1" xmlns="http://www.w3.org/2000/svg" fill="#334155" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" class="w-10 h-10">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div id="log-celcius1" class="w-[95%] h-14 flex items-center p-4  rounded-md  bg-gray-700"></div>
+              <div id="log-celcius2" class="w-[95%] h-14 text-[#94a3b8] flex items-center p-4  rounded-md  bg-gray-700"></div>
+              <div id="log-celcius3" class="w-[95%] h-14 flex text-[#94a3b8] items-center p-4  rounded-md  bg-gray-700"></div>
+              <div id="log-celcius4" class="w-[95%] text-[#94a3b8] h-14 flex items-center p-4  rounded-md  bg-gray-700"></div>
+            </div>
+          </div>
+          <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+            <div class="w-full mt-3 gap-2 flex flex-col items-center font-medium justify-center">
+              <h1 class="w-[95%] h-10 text-xl text-white font-fira">Fahrenheit</h1>
+              <div class="flex w-[95%] gap-2 items-center justify-center">
+                <input type="text" class="input bg-gray-700 text-[#94a3b8] outline-none border-none font-fira" id="input2" placeholder="Tulis Disini..." />
+                <svg id="btn2" xmlns="http://www.w3.org/2000/svg" fill="#334155" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" class="w-10 h-10">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div id="log-celcius5" class="w-[95%] h-14 text-[#94a3b8] flex items-center p-4  rounded-md  bg-gray-700"></div>
+              <div id="log-celcius6" class="w-[95%] h-14 text-[#94a3b8] flex items-center p-4  rounded-md  bg-gray-700"></div>
+              <div id="log-celcius7" class="w-[95%] h-14 flex text-[#94a3b8] items-center p-4  rounded-md  bg-gray-700"></div>
+              <div id="log-celcius8" class="w-[95%] text-[#94a3b8] h-14 flex items-center p-4  rounded-md  bg-gray-700"></div>
+            </div>
+          </div>
+          <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+            <div class="w-full mt-3 gap-2 flex flex-col items-center font-medium justify-center">
+              <h1 class="w-[95%] h-10 text-xl text-white font-fira">Kelvin</h1>
+              <div class="flex w-[95%] gap-2 items-center justify-center">
+                <input type="text" class="input bg-gray-700 text-[#94a3b8] outline-none border-none font-fira" id="input3" placeholder="Tulis Disini..." />
+                <svg id="btn3" xmlns="http://www.w3.org/2000/svg" fill="#334155" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" class="w-10 h-10">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div id="log-celcius9" class="w-[95%] h-14 text-[#94a3b8] flex items-center p-4  rounded-md  bg-gray-700"></div>
+              <div id="log-celcius10" class="w-[95%] h-14 text-[#94a3b8] flex items-center p-4  rounded-md  bg-gray-700"></div>
+              <div id="log-celcius11" class="w-[95%] h-14 flex text-[#94a3b8] items-center p-4  rounded-md  bg-gray-700"></div>
+              <div id="log-celcius12" class="w-[95%] text-[#94a3b8] h-14 flex items-center p-4  rounded-md  bg-gray-700"></div>
+            </div>
+          </div>
+          <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+            <div class="w-full mt-3 gap-2 flex flex-col items-center font-medium justify-center">
+              <h1 class="w-[95%] h-10 text-xl text-white font-fira">Reamur</h1>
+              <div class="flex w-[95%] gap-2 items-center justify-center">
+                <input type="text" class="input bg-gray-700 text-[#94a3b8] outline-none border-none font-fira" id="input4" placeholder="Tulis Disini..." />
+                <svg id="btn4" xmlns="http://www.w3.org/2000/svg" fill="#334155" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" class="w-10 h-10">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div id="log-celcius13" class="w-[95%] h-14 text-[#94a3b8] flex items-center p-4  rounded-md  bg-gray-700"></div>
+              <div id="log-celcius14" class="w-[95%] h-14 text-[#94a3b8] flex items-center p-4  rounded-md  bg-gray-700"></div>
+              <div id="log-celcius15" class="w-[95%] h-14 flex text-[#94a3b8] items-center p-4  rounded-md  bg-gray-700"></div>
+              <div id="log-celcius16" class="w-[95%] text-[#94a3b8] h-14 flex items-center p-4  rounded-md  bg-gray-700"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

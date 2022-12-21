@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Montserrat&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins&family=Roboto:wght@300;400&family=Rubik:wght@400;700&family=Space+Mono&family=Work+Sans&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+::placeholder {
+    color: #334155 !important;
+    opacity: 1;
+    font-style: italic;
+}
+::-webkit-input-placeholder {
+    color: #94a3b8 !important;
+    opacity: 1;
+}
+
+body {
+  overflow: hidden;
+}
+
+
+
+.logo {
+    box-shadow:-3px -3px 15px #000;
+}
+
+.input {
+  color: #94a3b8 ;
+  width: 100%;
+}
+
+#log-celcius1, #clr {
+  color: #94a3b8 ;
+}
+
+.popup {
+  opacity: .8;
+  visibility: hidden;
+}
+
+#close {
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.popup.active {
+  display: block;
+}
+
+/* nav .slider {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  border-radius: 5px;
+  background: #17a2b8;
+  transition: all 0.3s ease;
+} */
+
+
+
