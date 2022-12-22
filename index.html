@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Konversi Suhu</title>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="output.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="input.css" />
   </head>
   <body>
     <main>
-      <div class="bg-slate-800 w-screen h-screen">
-        <header class="w-full flex items-center justify-center logo">
-          <h1 class="logo flex items-center justify-center gap-3 text-center w-full font-fira font-semibold text-2xl p-4 bg-opacity-30 drop-shadow-2xl" id="animate-header">
-            Konversi Suhu
+      <div class="bg-slate-800 w-screen h-screen" id="container">
+        <header class="w-full flex items-center relative justify-center logo">
+          <h1 class="logo flex items-center relative justify-center gap-3 text-center w-full font-fira font-semibold text-2xl p-4 bg-opacity-30 drop-shadow-2xl" id="animate-header">
+            <i class='bx bx-moon text-gray-500 ' id="dark-mode"></i>Konversi Suhu
             <svg class="w-8 svg" id="tempe" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 320 512">
               <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
               <path
@@ -34,7 +36,7 @@
           </div>
         </div>
         <div class="w-screen h-10 fixed bottom-0 left-0">
-          <p class="text-[#94a3b8] text-sm text-center">
+          <p class="text-[#94a3b8] text-sm text-center" id="footerr">
             hsbnpahri@gmail.com
           </p>
         </div>
@@ -86,7 +88,7 @@
           </ul>
         </div>
         <div id="myTabContent" class="-z-50">
-          <div class="hidden p-4 rounded-lg bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="hidden p-4  bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <div class="w-full mt-3 gap-2 flex flex-col items-center font-medium justify-center">
               <h1 class="w-[95%] h-10 text-xl text-white font-fira" id="cel">
                 Celcius
@@ -105,7 +107,7 @@
           </div>
           <div class="hidden p-4 rounded-lg bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
             <div class="w-full mt-3 gap-2 flex flex-col items-center font-medium justify-center">
-              <h1 class="w-[95%] h-10 text-xl text-white font-fira">Fahrenheit</h1>
+              <h1 class="w-[95%] h-10 text-xl text-white font-fira" id="fe">Fahrenheit</h1>
               <div class="flex w-[95%] gap-2 items-center justify-center">
                 <input type="text" class="input bg-gray-700 text-[#94a3b8] outline-none border-none font-fira" id="input2" placeholder="Tulis Disini..." />
                 <svg id="btn2" xmlns="http://www.w3.org/2000/svg" fill="#334155" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" class="w-10 h-10">
@@ -120,7 +122,7 @@
           </div>
           <div class="hidden p-4  rounded-lg bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
             <div class="w-full mt-3 gap-2 flex flex-col items-center font-medium justify-center">
-              <h1 class="w-[95%] h-10 text-xl text-white font-fira">Kelvin</h1>
+              <h1 class="w-[95%] h-10 text-xl text-white font-fira" id="ke">Kelvin</h1>
               <div class="flex w-[95%] gap-2 items-center justify-center">
                 <input type="text" class="input bg-gray-700 text-[#94a3b8] outline-none border-none font-fira" id="input3" placeholder="Tulis Disini..." />
                 <svg id="btn3" xmlns="http://www.w3.org/2000/svg" fill="#334155" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" class="w-10 h-10">
@@ -135,7 +137,7 @@
           </div>
           <div class="hidden p-4  rounded-lg bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
             <div class="w-full mt-3 gap-2 flex flex-col items-center font-medium justify-center">
-              <h1 class="w-[95%] h-10 text-xl text-white font-fira">Reamur</h1>
+              <h1 class="w-[95%] h-10 text-xl text-white font-fira" id="re">Reamur</h1>
               <div class="flex w-[95%] gap-2 items-center justify-center">
                 <input type="text" class="input bg-gray-700 text-[#94a3b8] outline-none border-none font-fira" id="input4" placeholder="Tulis Disini..." />
                 <svg id="btn4" xmlns="http://www.w3.org/2000/svg" fill="#334155" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" class="w-10 h-10">
